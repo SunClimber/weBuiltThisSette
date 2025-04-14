@@ -1,18 +1,17 @@
-## Getting Started
+I chose to utilize the ChainHashMap because it's fast and had all the methods I assumed I needed.
+It does take up more space than the linearProbe, but I thouht it was worth it not really having to
+worry about collisions potentially slowing things down.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+I chose to implement the 7 methods below: 
 
-## Folder Structure
+size()
+isEmpty()
+add()
+contains()
+remove()
+clear()
+keySet() 
 
-The workspace contains two folders by default, where:
+From what I've read keySet() is not necessarily needed but, it felt wrong not having a way to access what's stored in the set, so I added it in there for fun, and just in case. 
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Since a set only cares about the existence of elements (not values), I used true as a dummy value when storing keys in the map. This let me use the map’s put() and get() methods without needing a real value tied to each element.
